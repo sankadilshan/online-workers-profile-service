@@ -1,0 +1,29 @@
+server:
+  port: 8081
+spring:
+  datasource:
+    initialization-mode: always
+    url: jdbc:mysql://localhost:3306/paginationDb?createDatabaseIfNotExist=true
+    username: root
+    password:
+    driver-class-name: com.mysql.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    show-sql: true
+    properties:
+      hibernate:
+        dialect:  org.hibernate.dialect.MySQL5Dialect
+  application:
+    name: profile service-onlineWorkers
+  jackson:
+    serialization:
+      fail-on-empty-beans: false
+social-service-url: http://localhost:8083/count
+jwt:
+  header: Authorization
+  secret: secret
+  expiration: 604800
+
